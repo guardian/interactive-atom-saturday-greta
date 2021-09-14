@@ -1,0 +1,106 @@
+@import "fonts";
+// @import "enhanced_fonts";
+@import "mq";
+@import "palette";
+// @import "enhancer";
+// gu_grid pulls the css for gs-container and content__main-column
+@import "gu_grid";
+
+.interactive-atom {
+    margin: 0;
+    padding: 0;
+}
+
+// for apps adds extra padding. Needed to make dark mode work
+.ios, .android {
+    .interactive-atom {
+        padding: 8px;
+    }
+}
+
+
+@keyframes first {
+    0% {
+            opacity: 1;
+            visibility: visible;
+    }
+    100% {
+        
+            opacity: 1;
+            visibility: visible;
+        
+    }
+}
+
+
+.wrapper {
+    .stick-me {
+        display: flex;
+        position: relative;
+        top: 0;
+    }
+    .left {
+        width: 40%;
+        .text-wrapper {
+            height: 100vh;
+            h1 {
+                font-size: 50px;
+                width: 400px;
+                margin: auto 0;
+                margin-top: 50vh;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    .right {
+        width: 60%;
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+        .image-wrapper {
+            position: relative;
+            height: 100vh;
+            img {
+                width: 100%;
+                position: absolute;
+                opacity: 0;
+                visibility: hidden;
+                &:nth-child(1) {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }        
+            &.first-burst {
+                img:nth-child(2) {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                img:nth-child(3) {
+                    animation-name: first;
+                    animation-duration: 0.1s;
+                    animation-delay: 1s;
+                    animation-fill-mode: forwards;
+                    animation-iteration-count: 1;
+                }
+            } 
+            &.second-burst {
+                img:nth-child(4) {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                img:nth-child(5) {
+                    animation-name: first;
+                    animation-duration: 0.1s;
+                    animation-delay: 1s;
+                    animation-fill-mode: forwards;
+                    animation-iteration-count: 1;
+                }
+            } 
+        }
+    }
+}
+
+
+#triggerFirst {
+    background-color: red;
+}
