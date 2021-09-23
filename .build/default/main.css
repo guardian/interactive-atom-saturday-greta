@@ -1,0 +1,848 @@
+/**
+ * Data font stack
+ *
+ * @group typography
+ */
+/**
+ * Serif font stack
+ *
+ * @group typography
+ */
+/**
+ * Headline font stack
+ *
+ * @group typography
+ */
+/**
+ * Sans serif text font stack
+ *
+ * @group typography
+ */
+/**
+ * Sans serif headline font stack
+ *
+ * @group typography
+ */
+/**
+ * Default font scale settings
+ * See font-scale.html and font-scale.png for visual representations
+ *
+ * @group typography
+ */
+/**
+ * Grab all levels of a font the font-scale
+ *
+ * @param {String} $name - Name of the font-scale matrix (eg: headline)
+ * @param {Map} $font-scale ($font-scale)
+ *
+ * @example
+ *  font-size: get-scale(header);
+ *
+ * @requires {variable} $font-scale
+ *
+ * @return {Map}
+ *
+ * @group typography
+ */
+/**
+ * Grab info for a particular level of a font-scale
+ *
+ * @param {String} $name - Name of the font-scale in the matrix (eg: headline)
+ * @param {Number} $level - Level in the matrix
+ * @param {Map} $font-scale ($font-scale)
+ *
+ * @example
+ *  font-size: get-scale-level(header, 1);
+ *
+ * @requires {variable} $font-scale
+ * @requires {function} get-scale
+ *
+ * @return {Map}
+ *
+ * @group typography
+ */
+/**
+ * Get a font-size for a level in the font-scale matrix
+ *
+ * @param {String} $name - Name of the font-scale in the matrix (eg: headline)
+ * @param {Number} $level - Level in the matrix
+ * @param {Map} $font-scale - Configuration
+ *
+ * @example
+ *  font-size: get-font-size(header, 3);
+ *
+ * @requires {variable} $font-scale
+ * @requires {function} convert-to-px
+ * @requires {function} get-scale-level
+ *
+ * @return {Number}
+ *
+ * @group typography
+ */
+/**
+ * Get a line-height for a level in the font-scale matrix
+ *
+ * @param {String} $name - Name of the font-scale in the matrix (eg: headline)
+ * @param {Number} $level - Level in the matrix
+ * @param {Map} $font-scale - Configuration
+ *
+ * @example
+ *  font-size: get-line-height(header, 3);
+ *
+ * @requires {variable} $font-scale
+ * @requires {function} convert-to-px
+ * @requires {function} get-scale-level
+ *
+ * @return {Number}
+ *
+ * @group typography
+ */
+/**
+ * Turn any value into pixels
+ *
+ * @param {Number} $value
+ *
+ * @example
+ *  font-size: convert-to-px(14); // 14px
+ *
+ * @return {Number}
+ *
+ * @group typography
+ */
+/**
+ * Default typography settings, to be included as soon as possible in the HTML
+ * 1. Make type rendering look crisper
+ * 2. Set relative line spacing to 1.5 (16px * 1.5 = 24px)
+ *
+ * @param {String} $font-family ($f-serif-text) - Default global font
+ *
+ * @requires {variable} $f-serif-text
+ *
+ * @group typography
+ */
+/**
+ * Font-size and line-height shorthand
+ *
+ * @param {Number} $size
+ * @param {Number} $line-height ($size)
+ *
+ * @example
+ *  @include font-size(18, 24);
+ *
+ * @requires {function} convert-to-px
+ *
+ * @group typography
+ */
+/**
+ * Font styling shorthand  
+ * Note: prefer the usage of the font-scale mixins to stick to the font scale
+ *
+ * @param {String} $family
+ * @param {String} $weight
+ * @param {Number} $size
+ * @param {Number} $line-height ($size)
+ *
+ * @example
+ *  @include font(arial, bold, 18, 24);
+ *
+ * @requires {mixin} font-size
+ *
+ * @group typography
+ */
+/**
+ * Header family and weight properties.
+ *
+ * @requires {variable} $f-serif-headline
+ *
+ * @group typography
+ */
+/**
+ * Header typography settings.
+ *
+ * @param {Number} $level
+ * @param {Boolean} $size-only
+ *
+ * @example
+ *  // Output all properties (font-size, line-height, family, weight)
+ *  @include fs-header(3);
+ *  
+ *  // Output font-size and line-height only
+ *  @include fs-header(3, $size-only: true);
+ *
+ * @requires {function} get-font-size
+ * @requires {function} get-line-height
+ * @requires {mixin} font-size
+ * @requires {mixin} f-header
+ *
+ * @group typography
+ */
+/**
+ * Healdine family and weight properties.
+ *
+ * @requires {variable} $f-serif-headline
+ *
+ * @group typography
+ */
+/**
+ * Headline typography settings.
+ *
+ * @param {Number} $level
+ * @param {Boolean} $size-only
+ *
+ * @example
+ *  // Output all properties (font-size, line-height, family, weight)
+ *  @include fs-headline(3);
+ *  
+ *  // Output font-size and line-height only
+ *  @include fs-headline(3, $size-only: true);
+ *
+ * @requires {function} get-font-size
+ * @requires {function} get-line-height
+ * @requires {mixin} font-size
+ * @requires {mixin} f-headline
+ *
+ * @group typography
+ */
+/**
+ * Body Heading family and weight properties.
+ *
+ * @requires {variable} $f-serif-text
+ *
+ * @group typography
+ */
+/**
+ * Body Heading typography settings.
+ *
+ * @param {Number} $level
+ * @param {Boolean} $size-only
+ *
+ * @example
+ *  // Output all properties (font-size, line-height, family, weight)
+ *  @include fs-bodyHeading(3);
+ *  
+ *  // Output font-size and line-height only
+ *  @include fs-bodyHeading(3, $size-only: true);
+ *
+ * @requires {function} get-font-size
+ * @requires {function} get-line-height
+ * @requires {mixin} font-size
+ * @requires {mixin} f-bodyHeading
+ *
+ * @group typography
+ */
+/**
+ * Body Copy family property.
+ *
+ * @requires {variable} $f-serif-text
+ *
+ * @group typography
+ */
+/**
+ * Body Copy typography settings.
+ *
+ * @param {Number} $level
+ * @param {Boolean} $size-only
+ *
+ * @example
+ *  // Output all properties (font-size, line-height, family)
+ *  @include fs-bodyCopy(3);
+ *  
+ *  // Output font-size and line-height only
+ *  @include fs-bodyCopy(3, $size-only: true);
+ *
+ * @requires {function} get-font-size
+ * @requires {function} get-line-height
+ * @requires {mixin} font-size
+ * @requires {mixin} f-bodyCopy
+ *
+ * @group typography
+ */
+/**
+ * Data family property.
+ *
+ * @requires {variable} $f-data
+ *
+ * @group typography
+ */
+/**
+ * Data typography settings.
+ *
+ * @param {Number} $level
+ * @param {Boolean} $size-only
+ *
+ * @example
+ *  // Output all properties (font-size, line-height, family)
+ *  @include fs-data(3);
+ *  
+ *  // Output font-size and line-height only
+ *  @include fs-data(3, $size-only: true);
+ *
+ * @requires {function} get-font-size
+ * @requires {function} get-line-height
+ * @requires {mixin} font-size
+ * @requires {mixin} f-data
+ *
+ * @group typography
+ */
+/**
+ * Text Sans family property.
+ *
+ * @requires {variable} $f-sans-serif-text
+ *
+ * @group typography
+ */
+/**
+ * Text Sans typography settings.
+ *
+ * @param {Number} $level
+ * @param {Boolean} $size-only
+ *
+ * @example
+ *  // Output all properties (font-size, line-height, family)
+ *  @include fs-textSans(3);
+ *  
+ *  // Output font-size and line-height only
+ *  @include fs-textSans(3, $size-only: true);
+ *
+ * @requires {function} get-font-size
+ * @requires {function} get-line-height
+ * @requires {mixin} font-size
+ * @requires {mixin} f-textSans
+ *
+ * @group typography
+ */
+/**
+ * Headline Sans family property.  
+ * Is not currently integrated into our font scale matrix,
+ * hence no `fs-` mixin; currently we're just using it as a
+ * replacement font in a few places.
+ *
+ * @requires {variable} $f-sans-serif-headline
+ *
+ * @group typography
+ */
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Light.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Light.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-LightItalic.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-LightItalic.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Regular.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Regular.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-RegularItalic.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-RegularItalic.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-RegularItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Medium.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Medium.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-MediumItalic.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-MediumItalic.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Semibold.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Semibold.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-SemiboldItalic.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-SemiboldItalic.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-SemiboldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Bold.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Bold.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-BoldItalic.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-BoldItalic.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Black.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Black.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Guardian Headline Full";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-BlackItalic.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-BlackItalic.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Guardian Titlepiece";
+  src: url("https://assets.guim.co.uk/static/frontend/fonts/guardian-titlepiece/noalts-not-hinted/GTGuardianTitlepiece-Bold.woff2") format("woff2"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-titlepiece/noalts-not-hinted/GTGuardianTitlepiece-Bold.woff") format("woff"), url("https://assets.guim.co.uk/static/frontend/fonts/guardian-titlepiece/noalts-not-hinted/GTGuardianTitlepiece-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
+.gs-container {
+  position: relative;
+  margin: auto;
+  padding: 0 10px; }
+  @media (min-width: 30em) {
+    .gs-container {
+      padding: 0 20px; } }
+  @media (min-width: 46.25em) {
+    .gs-container {
+      max-width: 740px; } }
+  @media (min-width: 61.25em) {
+    .gs-container {
+      max-width: 980px; } }
+  @media (min-width: 71.25em) {
+    .gs-container {
+      max-width: 1140px; } }
+  @media (min-width: 81.25em) {
+    .gs-container {
+      max-width: 1300px; } }
+
+.gs-container-top {
+  position: relative;
+  margin: auto; }
+  @media (min-width: 46.25em) {
+    .gs-container-top {
+      max-width: 740px; } }
+  @media (min-width: 61.25em) {
+    .gs-container-top {
+      padding: 0 0 0 20px;
+      max-width: 980px; } }
+  @media (min-width: 71.25em) {
+    .gs-container-top {
+      max-width: 1140px; } }
+  @media (min-width: 81.25em) {
+    .gs-container-top {
+      max-width: 1300px; } }
+
+.content__main-column {
+  position: relative; }
+  @media (min-width: 46.25em) {
+    .content__main-column {
+      max-width: 620px; } }
+  @media (min-width: 61.25em) {
+    .content__main-column {
+      margin-left: 0px;
+      margin-right: 310px; } }
+  @media (min-width: 71.25em) {
+    .content__main-column {
+      margin-left: 149px;
+      padding-left: 10px; } }
+  @media (min-width: 81.25em) {
+    .content__main-column {
+      margin-left: 228px; } }
+
+.meta__social {
+  padding-top: 0.375rem; }
+
+.social__item {
+  float: left;
+  min-width: 2rem;
+  padding: 0 0.1875rem 0.375rem 0;
+  cursor: pointer; }
+  .social__item .inline-icon__fallback {
+    display: none; }
+  .social__item .inline-icon {
+    background-color: transparent;
+    border: 1px solid #dcdcdc;
+    /* stylelint-disable-line */
+    transition: fill 0.3s ease, background-color 0.3s ease; }
+  .social__item .social-icon {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 0;
+    min-width: 2rem;
+    max-width: 100%;
+    width: auto;
+    height: 2rem; }
+    .social__item .social-icon svg {
+      height: 88%;
+      width: 88%; }
+  .social__item .rounded-icon {
+    border-radius: 62.5rem;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative; }
+  .social__item .centered-icon svg {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    position: absolute; }
+
+.content__dateline {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: 0.125rem;
+  margin-bottom: 0.375rem; }
+
+figure.element, .element-atom, .interactive-atom {
+  margin: 0;
+  padding: 0; }
+
+p {
+  font-family: "Guardian Text Egyptian Web", Georgia, serif;
+  font-size: 17px;
+  line-height: 150%;
+  margin-bottom: 12px; }
+
+.standfirst p {
+  font-size: 24px;
+  line-height: 115%; }
+
+.greta-wrapper .headline {
+  position: absolute;
+  top: -100px; }
+
+.greta-wrapper small {
+  font-family: GuardianTextSans,Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #767676;
+  display: block; }
+
+.top-wrapper {
+  background-color: #121212; }
+  .top-wrapper__inner {
+    color: white; }
+  .top-wrapper .stick-me {
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    top: 0;
+    -webkit-flex-direction: column-reverse;
+            flex-direction: column-reverse; }
+    @media (min-width: 61.25em) {
+      .top-wrapper .stick-me {
+        -webkit-flex-direction: row;
+                flex-direction: row; } }
+  .top-wrapper .left {
+    position: relative;
+    z-index: 1000;
+    margin-top: -20vh; }
+    @media (min-width: 61.25em) {
+      .top-wrapper .left {
+        width: 40%;
+        margin-top: unset; } }
+    .top-wrapper .left .text-wrapper {
+      height: 60vh;
+      display: -webkit-flex;
+      display: flex; }
+      .top-wrapper .left .text-wrapper:nth-child(1) {
+        height: 30vh; }
+      .top-wrapper .left .text-wrapper:nth-child(3) {
+        margin-bottom: 20vh; }
+      @media (min-width: 61.25em) {
+        .top-wrapper .left .text-wrapper {
+          -webkit-align-items: center;
+                  align-items: center;
+          min-height: 100vh;
+          min-height: -webkit-fill-available; }
+          .top-wrapper .left .text-wrapper:nth-child(1) {
+            height: 100vh; } }
+      .top-wrapper .left .text-wrapper h1 {
+        font-family: "Guardian Titlepiece", "Guardian Headline Full", "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
+        margin: auto 0;
+        padding-left: 10px;
+        font-size: 28px;
+        line-height: 125%;
+        opacity: 0;
+        transition: opacity 0.5s; }
+        @media (min-width: 61.25em) {
+          .top-wrapper .left .text-wrapper h1 {
+            padding: 0;
+            width: 350px;
+            font-size: 32px; } }
+        .top-wrapper .left .text-wrapper h1 span {
+          background-color: #121212;
+          position: relative;
+          white-space: pre-wrap;
+          padding-bottom: 4px;
+          padding-right: 4px;
+          box-shadow: -4px 0 0 #121212;
+          display: inline; }
+        .top-wrapper .left .text-wrapper h1 .yellow {
+          color: #ffe500; }
+        .top-wrapper .left .text-wrapper h1.inView {
+          opacity: 1;
+          transition: opacity 0.5s; }
+      .top-wrapper .left .text-wrapper:nth-child(1) {
+        display: block; }
+        @media (min-width: 61.25em) {
+          .top-wrapper .left .text-wrapper:nth-child(1) {
+            display: -webkit-flex;
+            display: flex; } }
+    .top-wrapper .left .standfirst {
+      font-family: "Guardian Headline", "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif;
+      font-weight: 400;
+      border-top: 1px solid #ededed;
+      background: #121212;
+      padding-left: 10px; }
+      @media (min-width: 61.25em) {
+        .top-wrapper .left .standfirst {
+          background-color: transparent;
+          padding-left: unset; } }
+      @media (min-width: 71.25em) {
+        .top-wrapper .left .standfirst {
+          display: -webkit-flex;
+          display: flex; } }
+      @media (min-width: 71.25em) {
+        .top-wrapper .left .standfirst__tag {
+          width: 160px; } }
+      @media (min-width: 81.25em) {
+        .top-wrapper .left .standfirst__tag {
+          width: 260px; } }
+      .top-wrapper .left .standfirst__tag p {
+        font-size: 20px;
+        font-family: "Guardian Headline", "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif;
+        font-weight: bold;
+        color: #121212;
+        background-color: #ffe500;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        padding: 2px 10px;
+        margin-left: -10px;
+        margin-bottom: 4px; }
+        @media (min-width: 61.25em) {
+          .top-wrapper .left .standfirst__tag p {
+            font-size: 20px;
+            margin-left: 0; } }
+      .top-wrapper .left .standfirst__inner {
+        font-family: "Guardian Headline", "Guardian Headline Full", "Guardian Egyptian Web", Georgia, serif;
+        font-weight: 400;
+        margin-right: 20px;
+        font-size: 24px;
+        line-height: 115%;
+        padding-bottom: 40px;
+        margin-bottom: 0;
+        padding-top: 2px; }
+        @media (min-width: 61.25em) {
+          .top-wrapper .left .standfirst__inner {
+            width: 300px; } }
+        @media (min-width: 71.25em) {
+          .top-wrapper .left .standfirst__inner {
+            border-left: 1px solid #ededed;
+            padding-left: 10px; } }
+      .top-wrapper .left .standfirst__byline {
+        color: #ffe500; }
+  .top-wrapper .right {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    -webkit-align-self: flex-start;
+            align-self: flex-start;
+    width: 100%;
+    height: 100vh; }
+    @media (min-width: 61.25em) {
+      .top-wrapper .right {
+        width: 60%; } }
+    .top-wrapper .right .image-wrapper {
+      position: relative;
+      height: 100%; }
+      .top-wrapper .right .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 2s; }
+        .top-wrapper .right .image-wrapper img:nth-child(1) {
+          opacity: 1;
+          visibility: visible; }
+      .top-wrapper .right .image-wrapper.first-burst img:nth-child(2) {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 2s; }
+      .top-wrapper .right .image-wrapper.second-burst img:nth-child(3) {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 2s; }
+      .top-wrapper .right .image-wrapper.third-burst img:nth-child(4) {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 2s; }
+
+.content-wrapper .big-pic {
+  position: relative; }
+  .content-wrapper .big-pic__image-wrapper {
+    width: calc(100% + 20px);
+    height: 100vh;
+    margin-left: -10px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; }
+    @media (min-width: 30em) {
+      .content-wrapper .big-pic__image-wrapper {
+        width: calc(100% + 40px);
+        margin-left: -20px; } }
+    .content-wrapper .big-pic__image-wrapper__image {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      -o-object-position: center;
+         object-position: center;
+      opacity: 0;
+      transition: opacity 2s; }
+      .content-wrapper .big-pic__image-wrapper__image.right {
+        -o-object-position: right;
+           object-position: right; }
+        @media (min-width: 61.25em) {
+          .content-wrapper .big-pic__image-wrapper__image.right {
+            -o-object-position: center;
+               object-position: center; } }
+      .content-wrapper .big-pic__image-wrapper__image.top {
+        -o-object-position: top;
+           object-position: top; }
+  .content-wrapper .big-pic__text-wrapper {
+    height: 100vh;
+    position: relative;
+    z-index: 1000;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+            align-items: center; }
+    .content-wrapper .big-pic__text-wrapper h2 {
+      color: white;
+      font-weight: bold;
+      max-width: -webkit-max-content;
+      max-width: -moz-max-content;
+      max-width: max-content;
+      font-family: "Guardian Titlepiece", "Guardian Headline Full", "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
+      margin: auto 0;
+      padding-left: 10px;
+      font-size: 28px;
+      line-height: 125%;
+      max-width: 90%; }
+      @media (min-width: 61.25em) {
+        .content-wrapper .big-pic__text-wrapper h2 {
+          margin-left: -15px;
+          font-size: 36px; } }
+      .content-wrapper .big-pic__text-wrapper h2 span {
+        background-color: #121212;
+        position: relative;
+        white-space: pre-wrap;
+        padding-bottom: 4px;
+        padding-right: 4px;
+        box-shadow: -4px 0 0 #121212;
+        display: inline; }
+      .content-wrapper .big-pic__text-wrapper h2 svg {
+        width: 30px;
+        height: 21px;
+        margin-right: 4px; }
+        @media (min-width: 61.25em) {
+          .content-wrapper .big-pic__text-wrapper h2 svg {
+            width: 38px;
+            height: 27px; } }
+    .content-wrapper .big-pic__text-wrapper.content__main-column {
+      border-left: none; }
+  .content-wrapper .big-pic small {
+    font-family: GuardianTextSans,Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #767676;
+    display: block;
+    padding: 0 10px;
+    position: relative;
+    background-color: white;
+    width: 100vw;
+    padding-bottom: 12px; }
+    @media (max-width: 980px) {
+      .content-wrapper .big-pic small {
+        margin-left: -10px; } }
+    @media (min-width: 61.25em) {
+      .content-wrapper .big-pic small {
+        padding-bottom: 4px; } }
+
+.content-wrapper .inline-image {
+  width: 100%; }
+  .content-wrapper .inline-image img {
+    width: 100%; }
+  @media (min-width: 71.25em) {
+    .content-wrapper .inline-image .showcase {
+      width: 780px;
+      margin-left: -160px;
+      z-index: 90;
+      position: relative; } }
+  @media (min-width: 81.25em) {
+    .content-wrapper .inline-image .showcase {
+      width: 860px;
+      margin-left: -240px; } }
+  .content-wrapper .inline-image small {
+    font-family: GuardianTextSans,Guardian Text Sans Web,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    font-weight: 400;
+    word-wrap: break-word;
+    color: #767676; }
+
+@media (min-width: 71.25em) {
+  .content__main-column::before {
+    content: '';
+    width: 1px;
+    position: absolute;
+    left: 0px;
+    background-color: #ededed;
+    top: -50px;
+    bottom: -13px; } }
+
+@media (min-width: 71.25em) {
+  .big-pic__text-wrapper.content__main-column::before {
+    display: none;
+    content: '';
+    width: 1px;
+    position: absolute;
+    left: 0px;
+    background-color: #ededed;
+    top: calc(50vh - 17px);
+    bottom: -13px; } }
+
+.dropcap-me:first-letter {
+  font-family: "Guardian Titlepiece", "Guardian Headline Full", "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
+  font-size: 120px;
+  line-height: 0.8;
+  font-weight: bold;
+  float: left;
+  margin-top: -1px;
+  margin-right: 8px; }
+  @media (min-width: 61.25em) {
+    .dropcap-me:first-letter {
+      margin-top: -12px;
+      line-height: 1; } }
+
+.dropcap-me {
+  border-top: 1px solid #ededed;
+  margin-top: 60px; }
+
+.big-pic.inView .big-pic__image-wrapper__image {
+  opacity: 1; }
