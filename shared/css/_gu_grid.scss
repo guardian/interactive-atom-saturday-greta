@@ -48,10 +48,10 @@
         margin-right: 310px;
     }
     @include mq(leftCol) {
-        margin-left: 149px;
+        margin-left: 141px;
         padding-left: 10px;
     }
     @include mq(wide) {
-        margin-left: 228px;
+        margin-left: 218px;
     }
 }

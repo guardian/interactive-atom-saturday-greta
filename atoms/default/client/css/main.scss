@@ -16,7 +16,6 @@ figure.element, .element-atom, .interactive-atom {
     padding: 0;
 }
 
-
 p {
     font-family: $f-serif-text;
     font-size: 17px;
@@ -97,6 +96,10 @@ p {
                 opacity: 0;
                 transition: opacity 0.5s;
 
+                @include mq(mobileLandscape) {
+                    margin-left: 14px;
+                }
+
                 
                 @include mq(desktop) {
                     padding: 0;
@@ -132,7 +135,10 @@ p {
             font-weight: 400;
             border-top: 1px solid $grey;
             background: $black;
-            padding-left: 10px;
+            padding: 0 10px;
+            @include mq(mobileLandscape) {
+                padding: 0 20px;
+            }
             @include mq(desktop) {
                 background-color: transparent;
                 padding-left: unset;
@@ -157,6 +163,9 @@ p {
                     padding: 2px 10px;
                     margin-left: -10px;
                     margin-bottom: 4px;
+                    @include mq(mobileLandscape) {
+                        margin-left:0;
+                    }
                     @include mq(desktop) {
                         font-size: 20px;
                         margin-left: 0;
@@ -182,6 +191,13 @@ p {
             }
             &__byline {
                 color: $yellow;
+                a {
+                    text-decoration: none;
+                    color: $yellow;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }
@@ -267,7 +283,7 @@ p {
                     }
                 }
                 &.top {
-                    object-position: top;
+                    object-position: center 13%;
                 }
             }
         }
@@ -331,13 +347,23 @@ p {
             background-color: white;
             
             width: 100vw;
-            padding-bottom: 12px;
+            padding-bottom: 20px;
             // max width desktop
-            @media (max-width: 980px) {
-                margin-left: -10px;
+            margin-left: -10px;
+            @include mq(mobileLandscape) {
+                padding:0 20px;
+                padding-bottom: 16px;
+                margin-left: -20px;           
             }
             @include mq(desktop) {
                 padding-bottom: 4px;
+            }
+            @include mq(leftCol) {
+                margin-left: 141px;
+                padding-left: 10px;
+            }
+            @include mq(wide) {
+                margin-left: 218px;
             }
         }
     }
@@ -396,6 +422,9 @@ p {
             bottom: -13px;
         }
     }
+    &.small::before {
+        display: none;
+    }
 }
 
 
@@ -416,6 +445,9 @@ p {
 .dropcap-me {
     border-top: 1px solid $grey;
     margin-top: 60px;
+    &:nth-child(1) {
+        margin-top: 20px;
+    }
 }
 
 .big-pic.inView {
@@ -428,14 +460,32 @@ p {
 
     }
 }
-
-// .big-pic.fadeOut {
-//     .big-pic__image-wrapper {
-//         &__image {
-//             opacity: 0.2;
-//         }
-//     }
-//     .big-pic__text-wrapper {
-
-//     }
-// }
+.meta-area {
+    padding-top: 4px;
+    .rounded-icon {
+        border: 1px solid $grey;
+        &:hover {
+            background-color: $black;
+            svg {
+                fill:white;
+            }
+        }
+    }
+    .meta__extras {
+        border-top: none;
+    }
+    @media (max-width: 980px) {
+        border-top: 1px solid $grey;
+        background-color: $black;
+        color: white;
+        padding-bottom: 10px;
+        .social__item {
+            svg {
+                fill: white;
+            }
+            .rounded-icon {
+                border: 1px solid white;
+            }
+        }
+    }
+}

@@ -447,11 +447,11 @@
       margin-right: 310px; } }
   @media (min-width: 71.25em) {
     .content__main-column {
-      margin-left: 149px;
+      margin-left: 141px;
       padding-left: 10px; } }
   @media (min-width: 81.25em) {
     .content__main-column {
-      margin-left: 228px; } }
+      margin-left: 218px; } }
 
 .meta__social {
   padding-top: 0.375rem; }
@@ -494,12 +494,25 @@
     position: absolute; }
 
 .content__dateline {
+  font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   position: relative;
   box-sizing: border-box;
   padding-top: 0.125rem;
   margin-bottom: 0.375rem; }
+
+.meta__extras {
+  border-top: 0.0625rem solid #dcdcdc;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 0.375rem;
+  position: relative;
+  clear: both; }
 
 figure.element, .element-atom, .interactive-atom {
   margin: 0;
@@ -574,6 +587,9 @@ p {
         line-height: 125%;
         opacity: 0;
         transition: opacity 0.5s; }
+        @media (min-width: 30em) {
+          .top-wrapper .left .text-wrapper h1 {
+            margin-left: 14px; } }
         @media (min-width: 61.25em) {
           .top-wrapper .left .text-wrapper h1 {
             padding: 0;
@@ -603,7 +619,10 @@ p {
       font-weight: 400;
       border-top: 1px solid #ededed;
       background: #121212;
-      padding-left: 10px; }
+      padding: 0 10px; }
+      @media (min-width: 30em) {
+        .top-wrapper .left .standfirst {
+          padding: 0 20px; } }
       @media (min-width: 61.25em) {
         .top-wrapper .left .standfirst {
           background-color: transparent;
@@ -630,6 +649,9 @@ p {
         padding: 2px 10px;
         margin-left: -10px;
         margin-bottom: 4px; }
+        @media (min-width: 30em) {
+          .top-wrapper .left .standfirst__tag p {
+            margin-left: 0; } }
         @media (min-width: 61.25em) {
           .top-wrapper .left .standfirst__tag p {
             font-size: 20px;
@@ -652,6 +674,11 @@ p {
             padding-left: 10px; } }
       .top-wrapper .left .standfirst__byline {
         color: #ffe500; }
+        .top-wrapper .left .standfirst__byline a {
+          text-decoration: none;
+          color: #ffe500; }
+          .top-wrapper .left .standfirst__byline a:hover {
+            text-decoration: underline; }
   .top-wrapper .right {
     position: -webkit-sticky;
     position: sticky;
@@ -721,8 +748,8 @@ p {
             -o-object-position: center;
                object-position: center; } }
       .content-wrapper .big-pic__image-wrapper__image.top {
-        -o-object-position: top;
-           object-position: top; }
+        -o-object-position: center 13%;
+           object-position: center 13%; }
   .content-wrapper .big-pic__text-wrapper {
     height: 100vh;
     position: relative;
@@ -776,13 +803,23 @@ p {
     position: relative;
     background-color: white;
     width: 100vw;
-    padding-bottom: 12px; }
-    @media (max-width: 980px) {
+    padding-bottom: 20px;
+    margin-left: -10px; }
+    @media (min-width: 30em) {
       .content-wrapper .big-pic small {
-        margin-left: -10px; } }
+        padding: 0 20px;
+        padding-bottom: 16px;
+        margin-left: -20px; } }
     @media (min-width: 61.25em) {
       .content-wrapper .big-pic small {
         padding-bottom: 4px; } }
+    @media (min-width: 71.25em) {
+      .content-wrapper .big-pic small {
+        margin-left: 141px;
+        padding-left: 10px; } }
+    @media (min-width: 81.25em) {
+      .content-wrapper .big-pic small {
+        margin-left: 218px; } }
 
 .content-wrapper .inline-image {
   width: 100%; }
@@ -827,6 +864,9 @@ p {
     top: calc(50vh - 17px);
     bottom: -13px; } }
 
+.big-pic__text-wrapper.content__main-column.small::before {
+  display: none; }
+
 .dropcap-me:first-letter {
   font-family: "Guardian Titlepiece", "Guardian Headline Full", "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
   font-size: 120px;
@@ -843,6 +883,29 @@ p {
 .dropcap-me {
   border-top: 1px solid #ededed;
   margin-top: 60px; }
+  .dropcap-me:nth-child(1) {
+    margin-top: 20px; }
 
 .big-pic.inView .big-pic__image-wrapper__image {
   opacity: 1; }
+
+.meta-area {
+  padding-top: 4px; }
+  .meta-area .rounded-icon {
+    border: 1px solid #ededed; }
+    .meta-area .rounded-icon:hover {
+      background-color: #121212; }
+      .meta-area .rounded-icon:hover svg {
+        fill: white; }
+  .meta-area .meta__extras {
+    border-top: none; }
+  @media (max-width: 980px) {
+    .meta-area {
+      border-top: 1px solid #ededed;
+      background-color: #121212;
+      color: white;
+      padding-bottom: 10px; }
+      .meta-area .social__item svg {
+        fill: white; }
+      .meta-area .social__item .rounded-icon {
+        border: 1px solid white; } }

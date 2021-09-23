@@ -3307,11 +3307,11 @@ stateChange;script.src=src}else document.write('\x3cscript src\x3d"'+src+'" defe
       margin-right: 310px; } }
   @media (min-width: 71.25em) {
     .content__main-column {
-      margin-left: 149px;
+      margin-left: 141px;
       padding-left: 10px; } }
   @media (min-width: 81.25em) {
     .content__main-column {
-      margin-left: 228px; } }
+      margin-left: 218px; } }
 
 .meta__social {
   padding-top: 0.375rem; }
@@ -3354,12 +3354,25 @@ stateChange;script.src=src}else document.write('\x3cscript src\x3d"'+src+'" defe
     position: absolute; }
 
 .content__dateline {
+  font-family: &quot;Guardian Text Sans Web&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   position: relative;
   box-sizing: border-box;
   padding-top: 0.125rem;
   margin-bottom: 0.375rem; }
+
+.meta__extras {
+  border-top: 0.0625rem solid #dcdcdc;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  margin-bottom: 0.375rem;
+  position: relative;
+  clear: both; }
 
 figure.element, .element-atom, .interactive-atom {
   margin: 0;
@@ -3434,6 +3447,9 @@ p {
         line-height: 125%;
         opacity: 0;
         transition: opacity 0.5s; }
+        @media (min-width: 30em) {
+          .top-wrapper .left .text-wrapper h1 {
+            margin-left: 14px; } }
         @media (min-width: 61.25em) {
           .top-wrapper .left .text-wrapper h1 {
             padding: 0;
@@ -3463,7 +3479,10 @@ p {
       font-weight: 400;
       border-top: 1px solid #ededed;
       background: #121212;
-      padding-left: 10px; }
+      padding: 0 10px; }
+      @media (min-width: 30em) {
+        .top-wrapper .left .standfirst {
+          padding: 0 20px; } }
       @media (min-width: 61.25em) {
         .top-wrapper .left .standfirst {
           background-color: transparent;
@@ -3490,6 +3509,9 @@ p {
         padding: 2px 10px;
         margin-left: -10px;
         margin-bottom: 4px; }
+        @media (min-width: 30em) {
+          .top-wrapper .left .standfirst__tag p {
+            margin-left: 0; } }
         @media (min-width: 61.25em) {
           .top-wrapper .left .standfirst__tag p {
             font-size: 20px;
@@ -3512,6 +3534,11 @@ p {
             padding-left: 10px; } }
       .top-wrapper .left .standfirst__byline {
         color: #ffe500; }
+        .top-wrapper .left .standfirst__byline a {
+          text-decoration: none;
+          color: #ffe500; }
+          .top-wrapper .left .standfirst__byline a:hover {
+            text-decoration: underline; }
   .top-wrapper .right {
     position: -webkit-sticky;
     position: sticky;
@@ -3581,8 +3608,8 @@ p {
             -o-object-position: center;
                object-position: center; } }
       .content-wrapper .big-pic__image-wrapper__image.top {
-        -o-object-position: top;
-           object-position: top; }
+        -o-object-position: center 13%;
+           object-position: center 13%; }
   .content-wrapper .big-pic__text-wrapper {
     height: 100vh;
     position: relative;
@@ -3636,13 +3663,23 @@ p {
     position: relative;
     background-color: white;
     width: 100vw;
-    padding-bottom: 12px; }
-    @media (max-width: 980px) {
+    padding-bottom: 20px;
+    margin-left: -10px; }
+    @media (min-width: 30em) {
       .content-wrapper .big-pic small {
-        margin-left: -10px; } }
+        padding: 0 20px;
+        padding-bottom: 16px;
+        margin-left: -20px; } }
     @media (min-width: 61.25em) {
       .content-wrapper .big-pic small {
         padding-bottom: 4px; } }
+    @media (min-width: 71.25em) {
+      .content-wrapper .big-pic small {
+        margin-left: 141px;
+        padding-left: 10px; } }
+    @media (min-width: 81.25em) {
+      .content-wrapper .big-pic small {
+        margin-left: 218px; } }
 
 .content-wrapper .inline-image {
   width: 100%; }
@@ -3687,6 +3724,9 @@ p {
     top: calc(50vh - 17px);
     bottom: -13px; } }
 
+.big-pic__text-wrapper.content__main-column.small::before {
+  display: none; }
+
 .dropcap-me:first-letter {
   font-family: &quot;Guardian Titlepiece&quot;, &quot;Guardian Headline Full&quot;, &quot;Guardian Headline&quot;, &quot;Guardian Egyptian Web&quot;, Georgia, serif;
   font-size: 120px;
@@ -3703,9 +3743,32 @@ p {
 .dropcap-me {
   border-top: 1px solid #ededed;
   margin-top: 60px; }
+  .dropcap-me:nth-child(1) {
+    margin-top: 20px; }
 
 .big-pic.inView .big-pic__image-wrapper__image {
   opacity: 1; }
+
+.meta-area {
+  padding-top: 4px; }
+  .meta-area .rounded-icon {
+    border: 1px solid #ededed; }
+    .meta-area .rounded-icon:hover {
+      background-color: #121212; }
+      .meta-area .rounded-icon:hover svg {
+        fill: white; }
+  .meta-area .meta__extras {
+    border-top: none; }
+  @media (max-width: 980px) {
+    .meta-area {
+      border-top: 1px solid #ededed;
+      background-color: #121212;
+      color: white;
+      padding-bottom: 10px; }
+      .meta-area .social__item svg {
+        fill: white; }
+      .meta-area .social__item .rounded-icon {
+        border: 1px solid white; } }
 
                  </style>
              </head>
@@ -3729,7 +3792,7 @@ p {
                         &lt;div class=&quot;standfirst__tag&quot;&gt;
                             &lt;p&gt;Interview&lt;/p&gt;
                         &lt;/div&gt;
-                        &lt;p class=&quot;standfirst__inner&quot;&gt;The world’s most famous teen activist opens up about how she’s changed since embarking on her mission to save the world&lt;br&gt; &lt;span class=&quot;standfirst__byline&quot;&gt;Interview: Simon Hattenstone&lt;br&gt;Portraits: Marcus Ohlsson&lt;/span&gt;&lt;/p&gt;
+                        &lt;p class=&quot;standfirst__inner&quot;&gt;The transformation of Greta Thunberg&lt;br&gt; &lt;span class=&quot;standfirst__byline&quot;&gt;Words: &lt;a href=&quot;https://www.theguardian.com/profile/simonhattenstone&quot;&gt;Simon Hattenstone&lt;/a&gt;&lt;br&gt;Portraits: Marcus Ohlsson&lt;/span&gt;&lt;/p&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
                 &lt;div class=&quot;right&quot;&gt;
@@ -3748,7 +3811,6 @@ p {
         &lt;div class=&quot;content__main-column&quot;&gt;
             &lt;div class=&quot;content__meta-container js-content-meta u-cf&quot;&gt;
                 &lt;div class=&quot;meta__contact-wrap&quot;&gt;
-                   &lt;p class=&quot;byline&quot; data-link-name=&quot;byline&quot; data-component=&quot;meta-byline&quot;&gt;&lt;/p&gt;
                    &lt;p class=&quot;content__dateline&quot; aria-hidden=&quot;true&quot;&gt;Fri 6 Aug 2021 12.44 BST&lt;/p&gt;
                    &lt;meta itemprop=&quot;dateModified&quot; content=&quot;2021-05-07T13:08:09+0100&quot;&gt;
                 &lt;/div&gt;
@@ -3799,12 +3861,11 @@ p {
     &lt;/div&gt;
     &lt;div class=&quot;interactive-blocks gs-container content-wrapper&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;gs-container&quot;&gt;
-        &lt;div class=&quot;content__main-column&quot;&gt;
-            Credits here?&lt;br&gt;
-            Credits here?&lt;br&gt;
-            Credits here?&lt;br&gt;
-            Credits here?&lt;br&gt;
-            Credits here?&lt;br&gt;
+        &lt;div class=&quot;content__main-column credits&quot;&gt;
+            &lt;p&gt;Makeup: Jeanette Törnqvist&lt;/p&gt;
+            &lt;p&gt;Hair: Erika Svedjevik (both for Lundlund)&lt;/p&gt;
+            &lt;p&gt;Post-production: IWonderU Studios&lt;/p&gt;
+            &lt;p&gt;Digital design: Harry Fischer&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
