@@ -36,14 +36,14 @@
         <div class="content__main-column">
             <div class="content__meta-container js-content-meta u-cf">
                 <div class="meta__contact-wrap">
-                   <p class="content__dateline" aria-hidden="true">Fri 6 Aug 2021 12.44 BST</p>
+                   <p class="content__dateline" aria-hidden="true">Sat 25 Sep 2021 08.00 BST</p>
                    <meta itemprop="dateModified" content="2021-05-07T13:08:09+0100">
                 </div>
                 <div class="meta__extras">
                    <div class="meta__social" data-component="share">
                       <ul class="social social--top js-social--top u-unstyled u-cf" data-component="social">
                          <li class="social__item social__item--facebook " data-link-name="facebook">
-                            <a class="social__action js-social__action--top social-icon-wrapper" data-link-name="social top" href="https://www.facebook.com/dialog/share?app_id=180444840287&href=https%3A%2F%2Fwww.theguardian.com%2Fbooks%2Fng-interactive%2F2021%2Faug%2F06%2Fthis-months-best-paperbacks-preppers-hari-kunzru-a-history-of-celebrity-and-more&CMP=share_btn_fb" target="_blank" title="Facebook">
+                            <a class="social__action js-social__action--top social-icon-wrapper" data-link-name="social top" href="https://www.facebook.com/dialog/share?app_id=180444840287&href=https%3A%2F%2Fwww.theguardian.com%2Fenvironment%2Fng-interactive%2F2021%2Fsep%2F25%2Fgreta-thunberg-i-really-see-the-value-of-friendship-apart-from-the-climate-almost-nothing-else-matters&CMP=share_btn_fb" target="_blank" title="Facebook">
                                <span class="inline-icon__fallback button">Share on Facebook</span>
                                <span class="inline-share-facebook inline-icon rounded-icon centered-icon social-icon social-icon--facebook">
                                   <svg width="32" height="32" viewBox="-2 -2 32 32" class="rounded-icon__svg centered-icon__svg social-icon__svg social-icon--facebook__svg inline-share-facebook__svg inline-icon__svg">
@@ -53,7 +53,7 @@
                             </a>
                          </li>
                          <li class="social__item social__item--twitter " data-link-name="twitter">
-                            <a class="social__action js-social__action--top social-icon-wrapper" data-link-name="social top" href="https://twitter.com/intent/tweet?text=This%20month%E2%80%99s%20best%20paperbacks%3A%20preppers%2C%20Hari%20Kunzru%2C%20a%20history%20of%20celebrity%20and%20more&url=https%3A%2F%2Fwww.theguardian.com%2Fbooks%2Fng-interactive%2F2021%2Faug%2F06%2Fthis-months-best-paperbacks-preppers-hari-kunzru-a-history-of-celebrity-and-more&CMP=share_btn_tw" target="_blank" title="Twitter">
+                            <a class="social__action js-social__action--top social-icon-wrapper" data-link-name="social top" href="https://twitter.com/intent/tweet?text=Greta%20Thunberg%3A%20%E2%80%98I%20really%20see%20the%20value%20of%20friendship.%20Apart%20from%20the%20climate%2C%20almost%20nothing%20else%20matters%E2%80%99&url=https%3A%2F%2Fwww.theguardian.com%2Fenvironment%2Fng-interactive%2F2021%2Fsep%2F25%2Fgreta-thunberg-i-really-see-the-value-of-friendship-apart-from-the-climate-almost-nothing-else-matters&CMP=share_btn_tw" target="_blank" title="Twitter">
                                <span class="inline-icon__fallback button">Share on Twitter</span>
                                <span class="inline-share-twitter inline-icon rounded-icon centered-icon social-icon social-icon--twitter">
                                   <svg width="32" height="32" viewBox="-2 -2 32 32" class="rounded-icon__svg centered-icon__svg social-icon__svg social-icon--twitter__svg inline-share-twitter__svg inline-icon__svg">
@@ -63,7 +63,7 @@
                             </a>
                          </li>
                          <li class="social__item social__item--email " data-link-name="email">
-                            <a class="social__action js-social__action--top social-icon-wrapper" data-link-name="social top" href="mailto:?subject=This%20month%E2%80%99s%20best%20paperbacks%3A%20preppers%2C%20Hari%20Kunzru%2C%20a%20history%20of%20celebrity%20and%20more&body=https%3A%2F%2Fwww.theguardian.com%2Fbooks%2Fng-interactive%2F2021%2Faug%2F06%2Fthis-months-best-paperbacks-preppers-hari-kunzru-a-history-of-celebrity-and-more&CMP=share_btn_link" target="_blank" title="Email">
+                            <a class="social__action js-social__action--top social-icon-wrapper" data-link-name="social top" href="mailto:?subject=Greta%20Thunberg%3A%20%E2%80%98I%20really%20see%20the%20value%20of%20friendship.%20Apart%20from%20the%20climate%2C%20almost%20nothing%20else%20matters%E2%80%99&body=https%3A%2F%2Fwww.theguardian.com%2Fenvironment%2Fng-interactive%2F2021%2Fsep%2F25%2Fgreta-thunberg-i-really-see-the-value-of-friendship-apart-from-the-climate-almost-nothing-else-matters&CMP=share_btn_link" target="_blank" title="Email">
                                <span class="inline-icon__fallback button">Share via Email</span>
                                <span class="inline-share-email inline-icon rounded-icon centered-icon social-icon social-icon--email">
                                   <svg width="32" height="32" viewBox="0 0 32 32" class="rounded-icon__svg centered-icon__svg social-icon__svg social-icon--email__svg inline-share-email__svg inline-icon__svg">
@@ -84,13 +84,51 @@
              </div>
         </div>
     </div>
-    <div class="interactive-blocks gs-container content-wrapper"></div>
+    <div class="interactive-blocks gs-container content-wrapper">
+        <div class="rendered-content">
+            {{#Content}}
+            <div class="content__main-column">
+                {{#paragraph}}
+                <p class="{{dropcap}}">
+                    {{ paragraph }}
+                </p>
+                {{/paragraph}}
+                {{#inlineImage}}
+                    <div class="inline-image">
+                        <img class="{{ imageSize }}" src="{{ inlineImage }}" alt="">
+                    </div>
+                {{/inlineImage}}
+                <small> {{ inlineImageCaption }} </small>
+                </div>
+                {{#bigImage}}
+                <div class="big-pic">
+                    <div class="big-pic__image-wrapper">
+                        <img class="big-pic__image-wrapper__image {{bigImagePosition}}" src="{{ bigImage }}"/>
+                    </div>
+                    <div class="big-pic__text-wrapper content__main-column">
+                        <h2>
+                            <span>
+                                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 41 29">
+                                    <path d="M40.498.519c-1.062 8.967-2.243 18.052-2.714 27.728H21.737c1.77-9.676 4.837-18.76 10.147-27.728h8.614Zm-21.121 0c-1.18 8.967-2.36 18.052-2.832 27.728H.498C2.15 18.57 5.336 9.487 10.528.519h8.848Z" fill="#FFE500"/>
+                                </svg>
+                                {{ bigQuote }}
+                            </span>
+                        </h2>
+                    </div>
+                    <small class="content__main-column">
+                        {{bigImageCaption}}
+                    </small>
+                </div>
+                {{/bigImage}}
+            {{/Content}}
+        </div>
+    </div>
     <div class="gs-container">
         <div class="content__main-column credits">
-            <p>Makeup: Jeanette Törnqvist</p>
-            <p>Hair: Erika Svedjevik (both for Lundlund)</p>
-            <p>Post-production: IWonderU Studios</p>
-            <p>Digital design: Harry Fischer</p>
+            <p><strong>Makeup</strong> Jeanette Törnqvist</p>
+            <p><strong>Hair</strong> Erika Svedjevik (both for Lundlund)</p>
+            <p><strong>Post-production</strong> IWonderU Studios</p>
+            <p><strong>Digital design</strong> Harry Fischer</p>
         </div>
     </div>
 </div>

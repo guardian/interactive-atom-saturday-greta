@@ -29,6 +29,11 @@ xr.get('https://interactive.guim.co.uk/docsdata-test/1v-ZusLVRPHGR9IwEQrF7ETrIQA
     // render just the html for the blocks
     var html = Mustache.render(template, sheets);
 
+    // delete excisting content
+    let oldContent = document.querySelector(".rendered-content")
+    console.log(oldContent)
+    oldContent.innerHTML = ""
+
     // inject that rendered html into the empty div we declared in main.html
     document.querySelector(".interactive-blocks").innerHTML = html;
 
